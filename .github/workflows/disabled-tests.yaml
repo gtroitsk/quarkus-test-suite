@@ -1,0 +1,40 @@
+name: "QQE Test Suite disabled test analyser"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 1"
+
+jobs:
+  disabled-tests-inspector:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Checkout utils repository
+        uses: actions/checkout@v4
+        with:
+          repository: quarkus-qe/quarkus-utilities
+          path: disabled-tests-inspector
+      - name: Reclaim Disk Space
+        run: .github/ci-prerequisites.sh
+      - name: Set Up Java 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          check-latest: true
+          cache: 'maven'
+      - name: Set Up GitHub API Token
+        # TODO: update secret name
+        run: echo "GITHUB_OAUTH=${{ secrets.GH_PAT }}" >> $GITHUB_ENV
+      - name: Run Disabled Tests Inspector
+        run: |
+          mvn clean install
+          java -DrepoOwner=quarkus-qe -DrepoName=quarkus-test-suite -Dbranches="main,3.8,3.15" -DbaseOutputFileName=disabled-tests-ts -jar target/quarkus-app/quarkus-run.jar
+      - name: Archive JSON Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: disabled-tests-report-ts
+          path: disabled-tests-inspector/*.json
+          retention-days: 7
