@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: quarkus-qe/quarkus-utilities
-          path: disabled-tests-inspector
+          path: quarkus-utilities
       - name: Reclaim Disk Space
         run: .github/ci-prerequisites.sh
       - name: Set Up Java 17
@@ -30,11 +30,12 @@ jobs:
         run: echo "GITHUB_OAUTH=${{ secrets.GH_PAT }}" >> $GITHUB_ENV
       - name: Run Disabled Tests Inspector
         run: |
+          cd quarkus-utilities/disabled-tests-inspector
           mvn clean install
           java -DrepoOwner=quarkus-qe -DrepoName=quarkus-test-suite -Dbranches="main,3.8,3.15" -DbaseOutputFileName=disabled-tests-ts -jar target/quarkus-app/quarkus-run.jar
       - name: Archive JSON Report
         uses: actions/upload-artifact@v4
         with:
           name: disabled-tests-report-ts
-          path: disabled-tests-inspector/*.json
+          path: quarkus-utilities/disabled-tests-inspector/*.json
           retention-days: 7
