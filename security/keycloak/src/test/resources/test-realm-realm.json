@@ -70,6 +70,9 @@
       "directAccessGrantsEnabled": true,
       "clientAuthenticatorType": "client-secret",
       "secret": "test-application-client-secret",
+      "attributes": {
+        "use.refresh.tokens": "true"
+      },
       "protocolMappers": [
         {
           "id": "f17f8d5f-2327-4e0b-8001-48a7706be252",
