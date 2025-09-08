@@ -36,5 +36,10 @@
             <artifactId>quarkus-test-service-database</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-devui</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>
