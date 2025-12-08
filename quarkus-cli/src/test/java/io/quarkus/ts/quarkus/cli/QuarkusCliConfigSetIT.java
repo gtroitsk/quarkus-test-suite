@@ -15,7 +15,6 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 
 import io.quarkus.test.bootstrap.config.QuarkusConfigCommand;
 import io.quarkus.test.bootstrap.config.QuarkusSetConfigCommandBuilder.EncryptOption;
@@ -83,7 +82,6 @@ public class QuarkusCliConfigSetIT {
 
     @Order(3)
     @Test
-    @DisabledIfSystemProperty(named = "gh-action-disable-on-win", matches = "true", disabledReason = "Some windows don't have all language pack/locales so it causing it fail")
     public void createPropertyCommand_EncryptValue_UseExistingEncryptionKey() {
         // configured props tested by SetPropertyTest#createPropertyCommand_EncryptValue_UseExistingEncryptionKey
         // use existing secret
@@ -178,7 +176,6 @@ public class QuarkusCliConfigSetIT {
 
     @Order(8)
     @Test
-    @DisabledIfSystemProperty(named = "gh-action-disable-on-win", matches = "true", disabledReason = "Some windows don't have all language pack/locales so it causing it fail")
     public void testQuarkusApplicationWithModifiedApplicationProperties() {
         configCommand.buildAppAndExpectSuccess(SetPropertyTest.class);
     }
