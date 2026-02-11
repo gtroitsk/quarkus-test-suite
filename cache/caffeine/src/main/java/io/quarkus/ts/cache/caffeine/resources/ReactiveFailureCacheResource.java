@@ -1,7 +1,9 @@
-package io.quarkus.ts.cache.caffeine;
+package io.quarkus.ts.cache.caffeine.resources;
 
 import java.util.Set;
 
+import io.quarkus.ts.cache.caffeine.keys.CollisionTestKey;
+import io.quarkus.ts.cache.caffeine.services.ReactiveFailureCacheService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;

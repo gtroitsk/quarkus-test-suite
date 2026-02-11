@@ -1,4 +1,4 @@
-package io.quarkus.ts.cache.caffeine;
+package io.quarkus.ts.cache.caffeine.resources;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;

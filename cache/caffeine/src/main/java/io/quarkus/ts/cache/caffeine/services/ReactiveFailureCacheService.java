@@ -1,10 +1,11 @@
-package io.quarkus.ts.cache.caffeine;
+package io.quarkus.ts.cache.caffeine.services;
 
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import io.quarkus.ts.cache.caffeine.keys.CollisionTestKey;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

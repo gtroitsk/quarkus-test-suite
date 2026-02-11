@@ -1,5 +1,8 @@
-package io.quarkus.ts.cache.caffeine;
+package io.quarkus.ts.cache.caffeine.resources;
 
+import io.quarkus.ts.cache.caffeine.services.RequestScopeService;
+import io.quarkus.ts.cache.caffeine.services.ApplicationScopeService;
+import io.quarkus.ts.cache.caffeine.services.BaseServiceWithCache;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
