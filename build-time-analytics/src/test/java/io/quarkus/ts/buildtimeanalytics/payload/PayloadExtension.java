@@ -1,4 +1,4 @@
-package io.quarkus.ts.buildtimeanalytics;
+package io.quarkus.ts.buildtimeanalytics.payload;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

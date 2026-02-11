@@ -1,4 +1,4 @@
-package io.quarkus.ts.buildtimeanalytics;
+package io.quarkus.ts.buildtimeanalytics.utils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -1,4 +1,4 @@
-package io.quarkus.ts.buildtimeanalytics;
+package io.quarkus.ts.buildtimeanalytics.utils;
 
 import java.io.File;
 import java.nio.file.Path;
