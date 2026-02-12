@@ -1,4 +1,4 @@
-package io.quarkus.ts.cache.redis;
+package io.quarkus.ts.cache.redis.services;
 
 import io.quarkus.cache.CacheInvalidate;
 import io.quarkus.cache.CacheInvalidateAll;

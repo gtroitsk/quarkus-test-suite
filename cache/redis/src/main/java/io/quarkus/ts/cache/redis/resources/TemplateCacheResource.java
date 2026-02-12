@@ -1,4 +1,4 @@
-package io.quarkus.ts.cache.redis;
+package io.quarkus.ts.cache.redis.resources;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
