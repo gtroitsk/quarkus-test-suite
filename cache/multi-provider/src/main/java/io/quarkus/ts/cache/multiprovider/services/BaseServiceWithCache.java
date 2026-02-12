@@ -1,4 +1,4 @@
-package io.quarkus.ts.cache.multiprovider;
+package io.quarkus.ts.cache.multiprovider.services;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

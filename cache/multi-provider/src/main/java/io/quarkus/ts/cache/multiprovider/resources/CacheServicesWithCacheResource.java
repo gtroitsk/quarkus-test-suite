@@ -1,5 +1,8 @@
-package io.quarkus.ts.cache.multiprovider;
+package io.quarkus.ts.cache.multiprovider.resources;
 
+import io.quarkus.ts.cache.multiprovider.services.ApplicationScopeService;
+import io.quarkus.ts.cache.multiprovider.services.BaseServiceWithCache;
+import io.quarkus.ts.cache.multiprovider.services.RequestScopeService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
