@@ -1,4 +1,4 @@
-package io.quarkus.ts.cache.caffeine.restclient.types;
+package io.quarkus.ts.cache.caffeine.restclient.dto;
 
 import jakarta.xml.bind.annotation.XmlRootElement;
 
