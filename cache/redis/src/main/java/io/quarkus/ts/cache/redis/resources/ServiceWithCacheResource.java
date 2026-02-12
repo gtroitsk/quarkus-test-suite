@@ -1,5 +1,8 @@
-package io.quarkus.ts.cache.redis;
+package io.quarkus.ts.cache.redis.resources;
 
+import io.quarkus.ts.cache.redis.services.ApplicationScopeService;
+import io.quarkus.ts.cache.redis.services.BaseServiceWithCache;
+import io.quarkus.ts.cache.redis.services.RequestScopeService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
