@@ -1,4 +1,4 @@
-package io.quarkus.ts.cache.infinispan;
+package io.quarkus.ts.cache.infinispan.resources;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

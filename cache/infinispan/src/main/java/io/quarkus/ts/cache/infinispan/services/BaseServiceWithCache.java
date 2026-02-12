@@ -1,4 +1,4 @@
-package io.quarkus.ts.cache.infinispan;
+package io.quarkus.ts.cache.infinispan.services;
 
 import java.time.Duration;
 import java.util.concurrent.CompletionStage;
