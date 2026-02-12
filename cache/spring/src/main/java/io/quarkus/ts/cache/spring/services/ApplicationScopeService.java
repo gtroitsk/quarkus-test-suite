@@ -1,4 +1,4 @@
-package io.quarkus.ts.cache.spring;
+package io.quarkus.ts.cache.spring.services;
 
 import org.springframework.stereotype.Service;
 
