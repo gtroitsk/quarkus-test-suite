@@ -1,4 +1,4 @@
-package io.quarkus.ts.cache.multiprovider;
+package io.quarkus.ts.cache.multiprovider.services;
 
 import jakarta.enterprise.context.RequestScoped;
 
