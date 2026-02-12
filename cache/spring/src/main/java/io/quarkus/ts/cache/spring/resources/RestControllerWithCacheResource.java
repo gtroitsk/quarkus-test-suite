@@ -1,5 +1,6 @@
-package io.quarkus.ts.cache.spring;
+package io.quarkus.ts.cache.spring.resources;
 
+import io.quarkus.ts.cache.spring.services.BaseServiceWithCache;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;

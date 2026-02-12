@@ -1,5 +1,8 @@
-package io.quarkus.ts.cache.spring;
+package io.quarkus.ts.cache.spring.resources;
 
+import io.quarkus.ts.cache.spring.services.ApplicationScopeService;
+import io.quarkus.ts.cache.spring.services.BaseServiceWithCache;
+import io.quarkus.ts.cache.spring.services.RequestScopeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
