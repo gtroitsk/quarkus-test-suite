@@ -1,5 +1,8 @@
-package io.quarkus.ts.cache.infinispan;
+package io.quarkus.ts.cache.infinispan.resources;
 
+import io.quarkus.ts.cache.infinispan.services.ApplicationScopeService;
+import io.quarkus.ts.cache.infinispan.services.BaseServiceWithCache;
+import io.quarkus.ts.cache.infinispan.services.RequestScopeService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -43,7 +46,7 @@ public class ServiceWithCacheResource {
     @Path("/{service}/using-prefix/{prefix}")
     @Produces(MediaType.TEXT_PLAIN)
     public BaseServiceWithCache.ExpensiveResponse getValueUsingPrefixFromService(@PathParam("service") String service,
-            @PathParam("prefix") String prefix) {
+                                                                                 @PathParam("prefix") String prefix) {
         return lookupServiceByPathParam(service).getValueWithPrefix(prefix);
     }
 

@@ -1,4 +1,4 @@
-package io.quarkus.ts.cache.infinispan;
+package io.quarkus.ts.cache.infinispan.resources;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
