@@ -1,4 +1,4 @@
-package io.quarkus.ts.configmap.api.server;
+package io.quarkus.ts.configmap.api.server.config;
 
 import static org.hamcrest.Matchers.is;
 
@@ -6,12 +6,12 @@ import java.util.function.Supplier;
 
 import io.restassured.specification.RequestSpecification;
 
-class PropertiesSource {
-    static final String APP_PROPERTIES = "app-prop";
-    static final PropertiesSource INJECTED_PROPERTIES = new PropertiesSource("properties", true, null);
-    static final PropertiesSource BUILT_CONFIG = new PropertiesSource("built", true, null);
-    static final PropertiesSource INJECTED_CONFIG = new PropertiesSource("injected", true, null);
-    static Supplier<RequestSpecification> given;
+public class PropertiesSource {
+    public static final String APP_PROPERTIES = "app-prop";
+    public static final PropertiesSource INJECTED_PROPERTIES = new PropertiesSource("properties", true, null);
+    public static final PropertiesSource BUILT_CONFIG = new PropertiesSource("built", true, null);
+    public static final PropertiesSource INJECTED_CONFIG = new PropertiesSource("injected", true, null);
+    public static Supplier<RequestSpecification> given;
 
     private final String resource;
     private final boolean locked;
@@ -23,11 +23,11 @@ class PropertiesSource {
         this.secretKeyPrefix = secretKeyPrefix;
     }
 
-    PropertiesSource unlocked() {
+    public PropertiesSource unlocked() {
         return new PropertiesSource(this.resource, false, this.secretKeyPrefix);
     }
 
-    void assertSecret(String secretKey, String expectedSecretValue) {
+    public void assertSecret(String secretKey, String expectedSecretValue) {
         given()
                 .pathParam("resource", resource)
                 .pathParam("endpoint", locked ? "locked" : "unlocked")
@@ -38,7 +38,7 @@ class PropertiesSource {
                 .body(is(expectedSecretValue));
     }
 
-    void assertAccessDenied(String secretKey) {
+    public void assertAccessDenied(String secretKey) {
         given()
                 .pathParam("resource", resource)
                 .pathParam("endpoint", locked ? "locked" : "unlocked")
