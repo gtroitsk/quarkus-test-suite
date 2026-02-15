@@ -1,4 +1,4 @@
-package io.quarkus.ts.http.grpc;
+package io.quarkus.ts.http.grpc.rest;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

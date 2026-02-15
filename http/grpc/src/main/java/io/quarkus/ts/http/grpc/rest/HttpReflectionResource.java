@@ -1,8 +1,9 @@
-package io.quarkus.ts.http.grpc;
+package io.quarkus.ts.http.grpc.rest;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import io.quarkus.ts.http.grpc.GrpcReflectionResponse;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
