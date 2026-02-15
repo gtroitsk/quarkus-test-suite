@@ -1,4 +1,4 @@
-package io.quarkus.ts.http.advanced;
+package io.quarkus.ts.http.advanced.headers;
 
 import java.io.IOException;
 import java.io.OutputStream;

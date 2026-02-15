@@ -27,6 +27,7 @@ import io.quarkus.test.scenarios.QuarkusScenario;
 import io.quarkus.test.services.DevModeQuarkusApplication;
 import io.quarkus.test.utils.AwaitilityUtils;
 import io.quarkus.test.utils.FileUtils;
+import io.quarkus.ts.http.advanced.headers.PathSpecificHeadersResource;
 import io.restassured.response.Response;
 
 @Tag("QUARKUS-6247")

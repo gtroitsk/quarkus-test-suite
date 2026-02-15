@@ -1,4 +1,4 @@
-package io.quarkus.ts.http.advanced;
+package io.quarkus.ts.http.advanced.grpc;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;

@@ -1,4 +1,4 @@
-package io.quarkus.ts.http.advanced;
+package io.quarkus.ts.http.advanced.headers;
 
 public class CustomHeaderResponse {
 

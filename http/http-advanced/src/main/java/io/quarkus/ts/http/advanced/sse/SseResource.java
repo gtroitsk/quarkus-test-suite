@@ -1,4 +1,4 @@
-package io.quarkus.ts.http.advanced;
+package io.quarkus.ts.http.advanced.sse;
 
 import java.util.Arrays;
 import java.util.concurrent.locks.LockSupport;

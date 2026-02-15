@@ -1,7 +1,7 @@
-package io.quarkus.ts.http.advanced;
+package io.quarkus.ts.http.advanced.grpc;
 
-import static io.quarkus.ts.http.advanced.GrpcClientInterceptors.CLIENT_CLASS;
-import static io.quarkus.ts.http.advanced.GrpcClientInterceptors.CLIENT_METHOD;
+import static io.quarkus.ts.http.advanced.grpc.GrpcClientInterceptors.CLIENT_CLASS;
+import static io.quarkus.ts.http.advanced.grpc.GrpcClientInterceptors.CLIENT_METHOD;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;

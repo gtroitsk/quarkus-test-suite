@@ -1,4 +1,4 @@
-package io.quarkus.ts.http.advanced;
+package io.quarkus.ts.http.advanced.grpc;
 
 import java.time.Duration;
 import java.util.stream.Collectors;

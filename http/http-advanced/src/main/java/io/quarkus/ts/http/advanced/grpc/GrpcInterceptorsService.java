@@ -1,4 +1,4 @@
-package io.quarkus.ts.http.advanced;
+package io.quarkus.ts.http.advanced.grpc;
 
 import io.grpc.stub.StreamObserver;
 import io.quarkus.example.HelloReply;

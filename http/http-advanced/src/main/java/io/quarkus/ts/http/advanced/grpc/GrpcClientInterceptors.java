@@ -1,4 +1,4 @@
-package io.quarkus.ts.http.advanced;
+package io.quarkus.ts.http.advanced.grpc;
 
 import static io.grpc.Metadata.ASCII_STRING_MARSHALLER;
 
