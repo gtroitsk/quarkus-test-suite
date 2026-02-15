@@ -1,4 +1,4 @@
-package io.quarkus.ts.http.graphql;
+package io.quarkus.ts.http.graphql.utils;
 
 import static io.restassured.RestAssured.given;
 
@@ -9,7 +9,7 @@ import jakarta.json.Json;
 
 import io.restassured.response.Response;
 
-public class Utils {
+public class GraphQLUtils {
     public static Response sendQuery(String query) {
         return given().basePath("graphql")
                 .contentType("application/json")
