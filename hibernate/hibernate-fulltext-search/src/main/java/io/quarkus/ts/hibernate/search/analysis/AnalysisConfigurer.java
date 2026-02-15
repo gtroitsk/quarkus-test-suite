@@ -1,4 +1,4 @@
-package io.quarkus.ts.hibernate.search;
+package io.quarkus.ts.hibernate.search.analysis;
 
 import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Named;

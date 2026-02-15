@@ -1,4 +1,4 @@
-package io.quarkus.ts.hibernate.search;
+package io.quarkus.ts.hibernate.search.tenant;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;

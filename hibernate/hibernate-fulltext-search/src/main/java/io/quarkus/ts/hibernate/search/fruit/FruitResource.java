@@ -1,4 +1,4 @@
-package io.quarkus.ts.hibernate.search;
+package io.quarkus.ts.hibernate.search.fruit;
 
 import java.util.List;
 import java.util.Map;
@@ -27,6 +27,8 @@ import org.hibernate.search.mapper.orm.session.SearchSession;
 import org.hibernate.search.util.common.data.Range;
 import org.jboss.logging.Logger;
 
+import io.quarkus.ts.hibernate.search.aggregation.MetricAggregationsResponseDto;
+import io.quarkus.ts.hibernate.search.aggregation.PriceAggregation;
 import io.smallrye.common.annotation.Blocking;
 
 @ApplicationScoped

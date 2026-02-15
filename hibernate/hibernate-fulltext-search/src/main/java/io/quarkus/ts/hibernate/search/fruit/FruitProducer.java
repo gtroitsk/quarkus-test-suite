@@ -1,4 +1,4 @@
-package io.quarkus.ts.hibernate.search;
+package io.quarkus.ts.hibernate.search.fruit;
 
 import java.util.List;
 import java.util.Objects;
@@ -11,6 +11,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.GenericField;
+
+import io.quarkus.ts.hibernate.search.annotation.MyCustomIdGeneratorAnnotation;
 
 @Entity
 @Table(name = "fruit_producer")

@@ -1,4 +1,4 @@
-package io.quarkus.ts.hibernate.search;
+package io.quarkus.ts.hibernate.search.annotation;
 
 import java.io.Serializable;
 import java.util.HashSet;

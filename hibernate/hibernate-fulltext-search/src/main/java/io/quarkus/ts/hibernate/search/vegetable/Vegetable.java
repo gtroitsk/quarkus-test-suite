@@ -1,4 +1,4 @@
-package io.quarkus.ts.hibernate.search;
+package io.quarkus.ts.hibernate.search.vegetable;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

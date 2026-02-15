@@ -1,4 +1,4 @@
-package io.quarkus.ts.hibernate.search;
+package io.quarkus.ts.hibernate.search.fruit;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +21,8 @@ import org.hibernate.search.mapper.pojo.mapping.definition.annotation.GenericFie
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed;
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.IndexedEmbedded;
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.KeywordField;
+
+import io.quarkus.ts.hibernate.search.annotation.MyCustomIdGeneratorAnnotation;
 
 @Entity
 @Table(name = "known_fruits")
