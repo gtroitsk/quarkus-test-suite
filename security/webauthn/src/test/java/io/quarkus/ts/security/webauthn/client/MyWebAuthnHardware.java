@@ -1,4 +1,4 @@
-package io.quarkus.ts.security.webauthn;
+package io.quarkus.ts.security.webauthn.client;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

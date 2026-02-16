@@ -6,6 +6,7 @@ import static org.hamcrest.Matchers.is;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import io.quarkus.ts.security.webauthn.client.MyWebAuthnHardware;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -17,6 +18,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 
 import io.quarkus.test.bootstrap.Protocol;
 import io.quarkus.test.bootstrap.RestService;
+import io.quarkus.ts.security.webauthn.filter.CookieFilter;
 import io.restassured.RestAssured;
 import io.restassured.filter.Filter;
 import io.restassured.http.ContentType;

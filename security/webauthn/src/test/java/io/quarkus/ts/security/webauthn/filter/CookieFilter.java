@@ -1,4 +1,4 @@
-package io.quarkus.ts.security.webauthn;
+package io.quarkus.ts.security.webauthn.filter;
 
 import java.net.MalformedURLException;
 import java.net.URL;
