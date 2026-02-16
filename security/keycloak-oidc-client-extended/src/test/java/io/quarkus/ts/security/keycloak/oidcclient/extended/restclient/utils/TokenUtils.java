@@ -1,21 +1,21 @@
-package io.quarkus.ts.security.keycloak.oidcclient.extended.restclient;
+package io.quarkus.ts.security.keycloak.oidcclient.extended.restclient.utils;
 
 import org.jboss.logging.Logger;
 
 import io.quarkus.test.bootstrap.KeycloakService;
 
-final class TokenUtils {
+public final class TokenUtils {
 
     private static final Logger LOG = Logger.getLogger(TokenUtils.class);
-    static final String USER = "test-user";
+    public static final String USER = "test-user";
 
-    static final String CLIENT_ID_DEFAULT = "test-application-client";
-    static final String CLIENT_SECRET_DEFAULT = "test-application-client-secret";
+    public static final String CLIENT_ID_DEFAULT = "test-application-client";
+    public static final String CLIENT_SECRET_DEFAULT = "test-application-client-secret";
 
     private TokenUtils() {
     }
 
-    static String createToken(KeycloakService keycloak) {
+    public static String createToken(KeycloakService keycloak) {
         // we retry and create AuthzClient as we experienced following exception in the past: 'Caused by:
         // org.apache.http.NoHttpResponseException: keycloak-ts-juwpkvyduk.apps.ocp4-15.dynamic.quarkus:80 failed to respond'
         return createToken(1, keycloak);
