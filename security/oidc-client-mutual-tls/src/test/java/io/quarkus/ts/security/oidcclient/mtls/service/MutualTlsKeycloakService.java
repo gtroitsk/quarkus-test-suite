@@ -1,4 +1,4 @@
-package io.quarkus.ts.security.oidcclient.mtls;
+package io.quarkus.ts.security.oidcclient.mtls.service;
 
 import static java.lang.String.format;
 
