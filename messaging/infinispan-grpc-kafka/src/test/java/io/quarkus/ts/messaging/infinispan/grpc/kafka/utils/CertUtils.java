@@ -1,4 +1,4 @@
-package io.quarkus.ts.messaging.infinispan.grpc.kafka;
+package io.quarkus.ts.messaging.infinispan.grpc.kafka.utils;
 
 import static io.quarkus.test.services.Certificate.Format.PKCS12;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
@@ -11,21 +11,21 @@ import io.quarkus.test.security.certificate.Certificate;
 
 public final class CertUtils {
 
-    static final Path TARGET = Path.of("target");
-    static final String KEYSTORE = "keystore.p12";
-    static final String TRUSTSTORE = "truststore.p12";
-    static final String PASSWORD = "password";
+    public static final Path TARGET = Path.of("target");
+    public static final String KEYSTORE = "keystore.p12";
+    public static final String TRUSTSTORE = "truststore.p12";
+    public static final String PASSWORD = "password";
 
     private CertUtils() {
         // UTIL CLASS
     }
 
-    static String getTruststorePath() {
+    public static String getTruststorePath() {
         // Infinispan does not handle relative path well
         return TARGET.resolve(TRUSTSTORE).toAbsolutePath().toString();
     }
 
-    static void prepareCerts() {
+    public static void prepareCerts() {
         // generate certs
         var cert = Certificate.of("infinispan-test", PKCS12, PASSWORD);
 
