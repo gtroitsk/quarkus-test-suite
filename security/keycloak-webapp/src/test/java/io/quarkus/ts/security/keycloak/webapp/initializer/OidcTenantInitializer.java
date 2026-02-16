@@ -1,4 +1,4 @@
-package io.quarkus.ts.security.keycloak.webapp;
+package io.quarkus.ts.security.keycloak.webapp.initializer;
 
 import static io.quarkus.oidc.runtime.OidcTenantConfig.ApplicationType.WEB_APP;
 import static io.quarkus.oidc.runtime.OidcTenantConfig.Roles.Source.accesstoken;
