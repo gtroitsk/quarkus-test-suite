@@ -1,4 +1,4 @@
-package io.quarkus.ts.opentelemetry;
+package io.quarkus.ts.opentelemetry.jaeger.builder;
 
 import io.quarkus.test.bootstrap.LocalhostManagedResource;
 import io.quarkus.test.bootstrap.ManagedResource;
