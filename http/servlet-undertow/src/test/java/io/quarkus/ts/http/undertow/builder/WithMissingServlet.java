@@ -1,4 +1,4 @@
-package io.quarkus.ts.http.undertow;
+package io.quarkus.ts.http.undertow.builder;
 
 import static io.quarkus.ts.http.undertow.UndertowMissingServletClassIT.replaceForInvalidXML;
 
