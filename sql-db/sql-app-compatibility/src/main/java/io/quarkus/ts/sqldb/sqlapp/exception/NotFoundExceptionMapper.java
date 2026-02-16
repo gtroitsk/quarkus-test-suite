@@ -1,4 +1,4 @@
-package io.quarkus.ts.sqldb.sqlapp;
+package io.quarkus.ts.sqldb.sqlapp.exception;
 
 import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.core.Response;
