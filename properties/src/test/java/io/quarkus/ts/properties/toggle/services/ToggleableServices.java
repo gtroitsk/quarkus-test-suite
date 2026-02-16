@@ -1,4 +1,4 @@
-package io.quarkus.ts.properties.toggle;
+package io.quarkus.ts.properties.toggle.services;
 
 public enum ToggleableServices {
     SWAGGER("Swagger", "/q/swagger-ui", "quarkus.swagger-ui.enabled"),
