@@ -1,20 +1,20 @@
-package io.quarkus.ts.sqldb.panacheflyway.init;
+package io.quarkus.ts.sqldb.panacheflyway.init.yaml;
 
 import java.util.ArrayList;
 import java.util.Map;
 
-class CustomYaml {
+public class CustomYaml {
     private final Map content;
 
-    CustomYaml(Object content) {
+    public CustomYaml(Object content) {
         this.content = (Map) content;
     }
 
-    CustomYaml get(String name) {
+    public CustomYaml get(String name) {
         return new CustomYaml(this.content.get(name));
     }
 
-    String getValue(String name) {
+    public String getValue(String name) {
         return (String) this.content.get(name);
     }
 
