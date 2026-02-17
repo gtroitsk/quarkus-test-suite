@@ -1,6 +1,5 @@
 package io.quarkus.ts.cache.caffeine.restclient.resources;
 
-import io.quarkus.ts.cache.caffeine.restclient.RestInterface;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -9,6 +8,7 @@ import jakarta.ws.rs.core.MediaType;
 
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
+import io.quarkus.ts.cache.caffeine.restclient.RestInterface;
 import io.quarkus.ts.cache.caffeine.restclient.dto.Book;
 
 @Path("/client/book")

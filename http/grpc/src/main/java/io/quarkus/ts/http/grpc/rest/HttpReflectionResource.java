@@ -3,7 +3,6 @@ package io.quarkus.ts.http.grpc.rest;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.quarkus.ts.http.grpc.GrpcReflectionResponse;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -16,6 +15,7 @@ import io.grpc.reflection.v1.ServerReflectionRequest;
 import io.grpc.reflection.v1.ServerReflectionResponse;
 import io.grpc.reflection.v1.ServiceResponse;
 import io.quarkus.grpc.GrpcClient;
+import io.quarkus.ts.http.grpc.GrpcReflectionResponse;
 import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.Uni;
 

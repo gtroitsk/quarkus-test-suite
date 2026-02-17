@@ -2,8 +2,6 @@ package io.quarkus.ts.cache.caffeine.resources;
 
 import java.util.Set;
 
-import io.quarkus.ts.cache.caffeine.keys.CollisionTestKey;
-import io.quarkus.ts.cache.caffeine.services.ReactiveFailureCacheService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -16,6 +14,8 @@ import jakarta.ws.rs.core.Response;
 
 import io.quarkus.cache.CacheKey;
 import io.quarkus.cache.CacheResult;
+import io.quarkus.ts.cache.caffeine.keys.CollisionTestKey;
+import io.quarkus.ts.cache.caffeine.services.ReactiveFailureCacheService;
 import io.smallrye.common.annotation.NonBlocking;
 import io.smallrye.mutiny.Uni;
 

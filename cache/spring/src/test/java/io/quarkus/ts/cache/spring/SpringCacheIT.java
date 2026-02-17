@@ -6,12 +6,12 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-import io.quarkus.ts.cache.spring.services.BaseServiceWithCache;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import io.quarkus.test.scenarios.QuarkusScenario;
+import io.quarkus.ts.cache.spring.services.BaseServiceWithCache;
 
 @QuarkusScenario
 public class SpringCacheIT {

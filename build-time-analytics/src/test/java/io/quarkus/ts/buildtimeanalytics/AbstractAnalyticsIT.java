@@ -27,7 +27,6 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import io.quarkus.ts.buildtimeanalytics.payload.PayloadExtension;
 import jakarta.inject.Inject;
 
 import org.apache.maven.model.Dependency;
@@ -40,6 +39,7 @@ import io.quarkus.test.bootstrap.QuarkusCliClient;
 import io.quarkus.test.bootstrap.QuarkusCliClient.Result;
 import io.quarkus.test.bootstrap.QuarkusCliRestService;
 import io.quarkus.test.services.quarkus.model.QuarkusProperties;
+import io.quarkus.ts.buildtimeanalytics.payload.PayloadExtension;
 import io.restassured.path.json.JsonPath;
 
 public abstract class AbstractAnalyticsIT {

@@ -1,6 +1,5 @@
 package io.quarkus.ts.cache.spring.resources;
 
-import io.quarkus.ts.cache.spring.services.BaseServiceWithCache;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
@@ -9,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import io.quarkus.ts.cache.spring.services.BaseServiceWithCache;
 
 @RestController
 @RequestMapping("/api")

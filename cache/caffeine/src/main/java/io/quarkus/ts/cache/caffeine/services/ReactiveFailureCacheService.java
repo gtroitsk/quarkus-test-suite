@@ -5,7 +5,6 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import io.quarkus.ts.cache.caffeine.keys.CollisionTestKey;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
@@ -16,6 +15,7 @@ import io.quarkus.cache.CacheKey;
 import io.quarkus.cache.CacheManager;
 import io.quarkus.cache.CacheResult;
 import io.quarkus.cache.CaffeineCache;
+import io.quarkus.ts.cache.caffeine.keys.CollisionTestKey;
 import io.smallrye.mutiny.Uni;
 
 @ApplicationScoped
