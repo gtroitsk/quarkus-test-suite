@@ -51,7 +51,7 @@ public class DevModeWorkspaceIT {
                 page.navigate(pageURL);
                 ElementHandle element = page.waitForSelector("#code");
                 String code = element.getAttribute("value");
-                Assertions.assertTrue(code.startsWith("package io.quarkus.ts.http.advanced;"),
+                Assertions.assertTrue(code.startsWith("package io.quarkus.ts.http.advanced.headers;"),
                         "The code doesn't contain the expected value: " + code);
             }
         }
@@ -111,7 +111,7 @@ public class DevModeWorkspaceIT {
                 AwaitilityUtils.untilAsserted(() -> {
                     Path file = app.getServiceFolder()
                             .resolve(Path.of("src", "main", "java", "io", "quarkus", "ts", "http", "advanced",
-                                    "PathSpecificHeadersResource.java"));
+                                    "headers", "PathSpecificHeadersResource.java"));
                     String content = FileUtils.loadFile(file.toFile());
                     Assertions.assertTrue(content.contains("@Path(\"/this\")"),
                             file + " wasn't edited:" + System.lineSeparator() + content);
