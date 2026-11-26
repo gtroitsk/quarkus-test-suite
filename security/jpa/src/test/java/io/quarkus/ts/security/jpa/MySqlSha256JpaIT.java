@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Tag;
 import io.quarkus.test.bootstrap.MySqlService;
 import io.quarkus.test.bootstrap.RestService;
 import io.quarkus.test.scenarios.QuarkusScenario;
+import io.quarkus.test.scenarios.annotations.DisabledOnSemeruJdk;
 import io.quarkus.test.services.Container;
 import io.quarkus.test.services.QuarkusApplication;
 import io.quarkus.ts.security.jpa.sha256.CreateUserWithSHA256PassResource;
@@ -13,6 +14,7 @@ import io.quarkus.ts.security.jpa.sha256.SHA256UserEntity;
 
 @Tag("QUARKUS-3866")
 @QuarkusScenario
+@DisabledOnSemeruJdk(reason = "OpenJ9 condy bug breaks Quarkus 4 app startup, see eclipse-openj9/openj9#25187 - fix lands in the Jan 2027 Semeru refresh")
 public class MySqlSha256JpaIT extends BaseJpaSecurityRealmIT {
 
     private static final int MYSQL_PORT = 3306;

@@ -12,6 +12,7 @@ import io.quarkus.test.bootstrap.RestService;
 import io.quarkus.test.bootstrap.SqlServerService;
 import io.quarkus.test.logging.Log;
 import io.quarkus.test.scenarios.QuarkusScenario;
+import io.quarkus.test.scenarios.annotations.DisabledOnSemeruJdk;
 import io.quarkus.test.services.Container;
 import io.quarkus.test.services.Dependency;
 import io.quarkus.test.services.QuarkusApplication;
@@ -19,6 +20,7 @@ import io.quarkus.test.services.QuarkusApplication;
 @Tag("fips-incompatible") // MSSQL works with BC JSSE FIPS which is not native-compatible, we test FIPS elsewhere
 @DisabledIfSystemProperty(named = "ts.arm.missing.services.excludes", matches = "true", disabledReason = "https://github.com/quarkus-qe/quarkus-test-suite/issues/2017")
 @QuarkusScenario
+@DisabledOnSemeruJdk(reason = "OpenJ9 condy bug breaks Quarkus 4 app startup, see eclipse-openj9/openj9#25187 - fix lands in the Jan 2027 Semeru refresh")
 public class SqlServerHibernateOfflineStartupIT extends AbstractHibernateOfflineStartupIT {
 
     private static final String JDBC_URL = "jdbc:sqlserver://localhost:1433;databaseName=%s;encrypt=false;";

@@ -6,12 +6,14 @@ import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 
 import io.quarkus.test.bootstrap.RestService;
 import io.quarkus.test.scenarios.QuarkusScenario;
+import io.quarkus.test.scenarios.annotations.DisabledOnSemeruJdk;
 import io.quarkus.test.services.DevModeQuarkusApplication;
 
 @Tag("fips-incompatible") // MSSQL driver can't establish connection with server when FIPS enabled
 @Tag("QUARKUS-6234")
 @QuarkusScenario
 @DisabledIfSystemProperty(named = "ts.arm.missing.services.excludes", matches = "true", disabledReason = "https://github.com/quarkusio/quarkus/issues/43375")
+@DisabledOnSemeruJdk(reason = "OpenJ9 condy bug breaks Quarkus 4 app startup, see eclipse-openj9/openj9#25187 - fix lands in the Jan 2027 Semeru refresh")
 public class DevModeMssqlComposeIT extends AbstractSqlDatabaseIT {
 
     @DevModeQuarkusApplication(properties = "mssql.properties")

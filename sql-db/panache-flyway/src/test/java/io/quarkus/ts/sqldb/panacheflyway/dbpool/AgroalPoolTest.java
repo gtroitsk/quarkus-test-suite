@@ -36,6 +36,7 @@ import io.agroal.api.AgroalDataSource;
 import io.quarkus.test.common.http.TestHTTPResource;
 import io.quarkus.test.junit.QuarkusTest;
 import io.quarkus.test.junit.TestProfile;
+import io.quarkus.test.scenarios.annotations.DisabledOnSemeruJdk;
 import io.quarkus.test.scenarios.annotations.EnabledWhenLinuxContainersAvailable;
 import io.quarkus.ts.sqldb.panacheflyway.UserRepository;
 import io.smallrye.mutiny.Multi;
@@ -55,6 +56,7 @@ import io.vertx.mutiny.ext.web.client.WebClient;
 @EnabledWhenLinuxContainersAvailable
 @QuarkusTest
 @TestProfile(AgroalTestProfile.class)
+@DisabledOnSemeruJdk(reason = "OpenJ9 condy bug breaks Quarkus 4 app startup, see eclipse-openj9/openj9#25187 - fix lands in the Jan 2027 Semeru refresh")
 public class AgroalPoolTest {
 
     private static final int CONCURRENCY_LEVEL = 20;

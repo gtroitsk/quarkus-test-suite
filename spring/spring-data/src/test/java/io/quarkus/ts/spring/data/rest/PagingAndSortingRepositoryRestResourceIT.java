@@ -16,10 +16,12 @@ import org.junit.jupiter.api.Test;
 import com.google.common.collect.Streams;
 
 import io.quarkus.test.scenarios.QuarkusScenario;
+import io.quarkus.test.scenarios.annotations.DisabledOnSemeruJdk;
 import io.restassured.common.mapper.TypeRef;
 import io.restassured.http.ContentType;
 
 @QuarkusScenario
+@DisabledOnSemeruJdk(reason = "OpenJ9 condy bug breaks Quarkus 4 app startup, see eclipse-openj9/openj9#25187 - fix lands in the Jan 2027 Semeru refresh")
 class PagingAndSortingRepositoryRestResourceIT extends AbstractPagingAndSortingRepositoryRestResourceIT {
 
     private static final List<String> MODIFIED_ITEMS = Streams.concat(ORIGINAL_ITEMS.stream(), Stream.of(UPDATED_ITEM))

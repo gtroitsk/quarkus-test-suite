@@ -12,10 +12,12 @@ import org.junit.jupiter.api.Test;
 import io.quarkus.qe.hibernate.data.TestDataEntity;
 import io.quarkus.test.bootstrap.DevModeQuarkusService;
 import io.quarkus.test.scenarios.QuarkusScenario;
+import io.quarkus.test.scenarios.annotations.DisabledOnSemeruJdk;
 import io.quarkus.test.services.DevModeQuarkusApplication;
 import io.quarkus.test.utils.AwaitilityUtils;
 
 @QuarkusScenario
+@DisabledOnSemeruJdk(reason = "OpenJ9 condy bug breaks Quarkus 4 app startup, see eclipse-openj9/openj9#25187 - fix lands in the Jan 2027 Semeru refresh")
 public class DevModeHibernateIT extends BaseHibernateIT {
 
     private static final String TEST_DATA_ENTITY_PATH = "src/main/java/io/quarkus/qe/hibernate/data/TestDataEntity.java";
