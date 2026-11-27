@@ -10,10 +10,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import io.quarkus.test.scenarios.QuarkusScenario;
+import io.quarkus.test.scenarios.annotations.DisabledOnSemeruJdk;
 import io.quarkus.ts.spring.data.AbstractDbIT;
 import io.restassured.http.Headers;
 
 @QuarkusScenario
+@DisabledOnSemeruJdk(reason = "OpenJ9 condy bug breaks Quarkus 4 app startup, see eclipse-openj9/openj9#25187 - fix lands in the Jan 2027 Semeru refresh")
 public class CommonsHeadersIT extends AbstractDbIT {
     //This is for regression test for https://github.com/quarkusio/quarkus/pull/12234
     @Test

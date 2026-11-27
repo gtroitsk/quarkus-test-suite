@@ -9,12 +9,14 @@ import org.junit.jupiter.api.Tag;
 import io.quarkus.test.bootstrap.KeycloakService;
 import io.quarkus.test.bootstrap.RestService;
 import io.quarkus.test.scenarios.QuarkusScenario;
+import io.quarkus.test.scenarios.annotations.DisabledOnSemeruJdk;
 import io.quarkus.test.services.KeycloakContainer;
 import io.quarkus.test.services.QuarkusApplication;
 import io.quarkus.ts.security.keycloak.webapp.initializer.OidcTenantInitializer;
 
 @Tag("QUARKUS-5660")
 @QuarkusScenario
+@DisabledOnSemeruJdk(reason = "OpenJ9 condy bug breaks Quarkus 4 app startup, see eclipse-openj9/openj9#25187 - fix lands in the Jan 2027 Semeru refresh")
 public class KeycloakStaticTenantWebappIT extends BaseWebappSecurityIT {
 
     @KeycloakContainer(runKeycloakInProdMode = true)

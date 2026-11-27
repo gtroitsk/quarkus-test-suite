@@ -12,6 +12,7 @@ import com.github.dockerjava.api.model.Image;
 
 import io.quarkus.test.bootstrap.RestService;
 import io.quarkus.test.scenarios.QuarkusScenario;
+import io.quarkus.test.scenarios.annotations.DisabledOnSemeruJdk;
 import io.quarkus.test.services.DevModeQuarkusApplication;
 import io.quarkus.test.utils.DockerUtils;
 import io.quarkus.test.utils.SocketUtils;
@@ -19,6 +20,7 @@ import io.quarkus.test.utils.SocketUtils;
 @Tag("fips-incompatible") // TODO: enable when https://github.com/quarkusio/quarkus/issues/40526 gets fixed
 @Tag("QUARKUS-959")
 @QuarkusScenario
+@DisabledOnSemeruJdk(reason = "OpenJ9 condy bug breaks Quarkus 4 app startup, see eclipse-openj9/openj9#25187 - fix lands in the Jan 2027 Semeru refresh")
 public class DevModeMysqlDevServiceUserExperienceIT {
 
     private static final String MYSQL_NAME = getImageName("mysql.image");

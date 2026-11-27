@@ -18,12 +18,14 @@ import org.junit.jupiter.api.TestMethodOrder;
 
 import io.quarkus.test.bootstrap.RestService;
 import io.quarkus.test.scenarios.QuarkusScenario;
+import io.quarkus.test.scenarios.annotations.DisabledOnSemeruJdk;
 import io.quarkus.test.services.DevModeQuarkusApplication;
 import io.restassured.response.Response;
 
 @Tag("QUARKUS-6164")
 @QuarkusScenario
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@DisabledOnSemeruJdk(reason = "OpenJ9 condy bug breaks Quarkus 4 app startup, see eclipse-openj9/openj9#25187 - fix lands in the Jan 2027 Semeru refresh")
 public class CustomDriverRegistrationIT {
 
     @DevModeQuarkusApplication

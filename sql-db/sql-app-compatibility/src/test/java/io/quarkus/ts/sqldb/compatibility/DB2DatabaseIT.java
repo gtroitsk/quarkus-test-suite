@@ -7,6 +7,7 @@ import io.quarkus.test.bootstrap.Db2Service;
 import io.quarkus.test.bootstrap.RestService;
 import io.quarkus.test.scenarios.QuarkusScenario;
 import io.quarkus.test.scenarios.annotations.DisabledOnNative;
+import io.quarkus.test.scenarios.annotations.DisabledOnSemeruJdk;
 import io.quarkus.test.services.Container;
 import io.quarkus.test.services.QuarkusApplication;
 
@@ -15,6 +16,7 @@ import io.quarkus.test.services.QuarkusApplication;
 @Tag("fips-incompatible") // Reported in https://github.com/IBM/Db2/issues/43
 @Tag("podman-incompatible") //TODO https://github.com/containers/podman/issues/16432
 @DisabledIfSystemProperty(named = "ts.arm.missing.services.excludes", matches = "true", disabledReason = "https://github.com/quarkus-qe/quarkus-test-suite/issues/2020")
+@DisabledOnSemeruJdk(reason = "OpenJ9 condy bug breaks Quarkus 4 app startup, see eclipse-openj9/openj9#25187 - fix lands in the Jan 2027 Semeru refresh")
 public class DB2DatabaseIT extends AbstractSqlDatabaseIT {
 
     @Container(image = "${db2.image}", port = 50000, expectedLog = "Setup has completed")

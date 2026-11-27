@@ -17,12 +17,14 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import io.quarkus.test.scenarios.QuarkusScenario;
+import io.quarkus.test.scenarios.annotations.DisabledOnSemeruJdk;
 import io.quarkus.ts.spring.data.AbstractDbIT;
 import io.quarkus.ts.spring.data.primitivetypes.model.Book;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 @QuarkusScenario
+@DisabledOnSemeruJdk(reason = "OpenJ9 condy bug breaks Quarkus 4 app startup, see eclipse-openj9/openj9#25187 - fix lands in the Jan 2027 Semeru refresh")
 public class SpringDataCompositeEntityIT extends AbstractDbIT {
 
     @Test

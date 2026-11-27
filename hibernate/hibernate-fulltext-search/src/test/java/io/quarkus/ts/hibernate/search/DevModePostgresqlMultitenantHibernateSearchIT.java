@@ -12,6 +12,7 @@ import io.quarkus.test.bootstrap.DefaultService;
 import io.quarkus.test.bootstrap.DevModeQuarkusService;
 import io.quarkus.test.bootstrap.PostgresqlService;
 import io.quarkus.test.scenarios.QuarkusScenario;
+import io.quarkus.test.scenarios.annotations.DisabledOnSemeruJdk;
 import io.quarkus.test.services.Container;
 import io.quarkus.test.services.DevModeQuarkusApplication;
 import io.quarkus.ts.hibernate.search.vegetable.VegetableResource.NameAndDescription;
@@ -19,6 +20,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
 
 @QuarkusScenario
+@DisabledOnSemeruJdk(reason = "OpenJ9 condy bug breaks Quarkus 4 app startup, see eclipse-openj9/openj9#25187 - fix lands in the Jan 2027 Semeru refresh")
 public class DevModePostgresqlMultitenantHibernateSearchIT extends AbstractMultitenantHibernateSearchIT {
 
     private static final int ELASTIC_PORT = 9200;

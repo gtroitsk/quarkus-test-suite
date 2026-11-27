@@ -12,10 +12,12 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import io.quarkus.test.scenarios.QuarkusScenario;
+import io.quarkus.test.scenarios.annotations.DisabledOnSemeruJdk;
 import io.restassured.common.mapper.TypeRef;
 import io.restassured.http.ContentType;
 
 @QuarkusScenario
+@DisabledOnSemeruJdk(reason = "OpenJ9 condy bug breaks Quarkus 4 app startup, see eclipse-openj9/openj9#25187 - fix lands in the Jan 2027 Semeru refresh")
 public class CrudRepositoryRestResourceIT extends AbstractRepositoryRestResourceIT {
 
     protected static final List<String> ORIGINAL_ITEMS = List.of("Library1");

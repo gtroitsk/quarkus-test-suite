@@ -7,11 +7,13 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import io.quarkus.test.scenarios.QuarkusScenario;
+import io.quarkus.test.scenarios.annotations.DisabledOnSemeruJdk;
 import io.quarkus.ts.spring.data.AbstractDbIT;
 import io.restassured.http.ContentType;
 
 @Tag("QUARKUS-2788")
 @QuarkusScenario
+@DisabledOnSemeruJdk(reason = "OpenJ9 condy bug breaks Quarkus 4 app startup, see eclipse-openj9/openj9#25187 - fix lands in the Jan 2027 Semeru refresh")
 public class SecuredRepositoryRestResourcesIT extends AbstractDbIT {
     private static final long NONEXISTENT_ENTITY_ID = 999;
     private static final String BASE_URL = "/secured";

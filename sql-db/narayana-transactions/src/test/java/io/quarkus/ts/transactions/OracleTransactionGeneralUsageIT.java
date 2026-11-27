@@ -2,10 +2,12 @@ package io.quarkus.ts.transactions;
 
 import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 
+import io.quarkus.test.bootstrap.JaegerService;
 import io.quarkus.test.bootstrap.OracleService;
 import io.quarkus.test.bootstrap.RestService;
 import io.quarkus.test.scenarios.QuarkusScenario;
 import io.quarkus.test.services.Container;
+import io.quarkus.test.services.JaegerContainer;
 import io.quarkus.test.services.QuarkusApplication;
 import io.quarkus.ts.transactions.recovery.TransactionExecutor;
 
@@ -22,12 +24,16 @@ public class OracleTransactionGeneralUsageIT extends TransactionCommons {
      */
     private static final String DATABASES = DATABASE + SEPARATOR + DATABASE + 2;
 
+    @JaegerContainer()
+    static final JaegerService jaeger = new JaegerService();
+
     @Container(image = "${oracle.image}", port = ORACLE_PORT, expectedLog = "DATABASE IS READY TO USE!")
     static OracleService database = new OracleService().withDatabase(DATABASES);
 
     @QuarkusApplication
     static RestService app = new RestService().withProperties("oracle.properties")
-            .withProperty("quarkus.otel.exporter.otlp.traces.endpoint", jaeger::getCollectorUrl)
+            .withProperty("quarkus.otel.exporter.otlp.endpoint", jaeger::getCollectorUrl)
+            .withProperty("quarkus.otel.traces.sampler.arg", "1.0d")
             .withProperty("quarkus.datasource.username", database.getUser())
             .withProperty("quarkus.datasource.password", database.getPassword())
             // we only want the second XA datasource to use 'mydb2', everything else should use 'mydb'
@@ -47,8 +53,13 @@ public class OracleTransactionGeneralUsageIT extends TransactionCommons {
 
     @Override
     protected Operation[] getExpectedJdbcOperations() {
-        return new Operation[] { new Operation("SELECT mydb.dual"), new Operation("INSERT mydb.journal"),
+        // OTel JDBC instrumentation normalizes "SELECT 1 FROM dual" to just "SELECT mydb"
+        return new Operation[] { new Operation("SELECT mydb"), new Operation("INSERT mydb.journal"),
                 new Operation("UPDATE mydb.account") };
     }
 
+    @Override
+    public JaegerService getJaeger() {
+        return jaeger;
+    }
 }

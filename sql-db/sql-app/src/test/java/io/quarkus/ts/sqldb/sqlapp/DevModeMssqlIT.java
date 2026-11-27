@@ -7,12 +7,14 @@ import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 import io.quarkus.test.bootstrap.RestService;
 import io.quarkus.test.scenarios.QuarkusScenario;
 import io.quarkus.test.scenarios.annotations.DisabledOnFips;
+import io.quarkus.test.scenarios.annotations.DisabledOnSemeruJdk;
 import io.quarkus.test.services.DevModeQuarkusApplication;
 
 @Tag("QUARKUS-959")
 @DisabledIfSystemProperty(named = "ts.arm.missing.services.excludes", matches = "true", disabledReason = "https://github.com/quarkusio/quarkus/issues/43375")
 @DisabledOnFips(reason = "https://redhat.atlassian.net/browse/QUARKUS-9915")
 @QuarkusScenario
+@DisabledOnSemeruJdk(reason = "OpenJ9 condy bug breaks Quarkus 4 app startup, see eclipse-openj9/openj9#25187 - fix lands in the Jan 2027 Semeru refresh")
 public class DevModeMssqlIT extends AbstractSqlDatabaseIT {
 
     @DevModeQuarkusApplication
